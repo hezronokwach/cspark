@@ -1,13 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root { --ink:#0E1B18; --paper:#EDEAE0; --plot:#AE4A31; --ochre:#B48A42; --map:#4C6B71; --line:#C9C4B4; }
+html { scroll-behavior:smooth; background:var(--paper); }
+body { margin:0; background:#fff; color:var(--ink); font-family:Georgia,'Times New Roman',serif; }
+::selection { background:var(--plot); color:white; }
+* { box-sizing:border-box; }
+:focus-visible { outline:2px solid var(--plot); outline-offset:4px; }
+@layer components {
+  .page-shell { @apply overflow-hidden bg-white; }
+  .frame { @apply mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12; }
+  .mono-label { @apply font-display text-xs font-semibold uppercase tracking-[0.13em] text-plot; }
+  .display { @apply font-display tracking-[-0.045em]; }
+  .rule { @apply h-px bg-line; }
+  .text-link { @apply inline-flex items-center gap-2 font-display text-sm font-bold text-ink transition-colors hover:text-plot; }
+  .action-link { @apply inline-flex items-center gap-3 rounded-full border border-plot/30 bg-plot/5 px-4 py-2 font-display text-sm font-bold text-plot transition-all hover:bg-plot hover:text-white; }
+  .button-plot { @apply inline-flex items-center gap-3 rounded-[10px] bg-plot px-7 py-4 font-display text-sm font-bold text-white transition-colors hover:bg-ink; }
+  .button-ink { @apply inline-flex items-center gap-3 rounded-[10px] border-2 border-ink px-7 py-4 font-display text-sm font-bold text-ink transition-colors hover:bg-ink hover:text-white; }
+  .image-slot { @apply relative overflow-hidden bg-[#d8d4ca]; }
+  .image-slot::after { content:''; @apply absolute inset-0 bg-gradient-to-br from-black/5 to-black/20; }
 }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }

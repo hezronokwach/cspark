@@ -1,25 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+import{useEffect,useRef}from'react';import gsap from'gsap';import{ScrollTrigger}from'gsap/ScrollTrigger';import Lenis from'lenis';import'./App.css';
+import Header from'./components/Header';import Hero from'./components/Hero';import QuickLinks from'./components/QuickLinks';import Stats from'./components/Stats';import Mission from'./components/Mission';import Projects from'./components/Projects';import Governance from'./components/Governance';import Footer from'./components/Footer';
+gsap.registerPlugin(ScrollTrigger);
+export default function App(){const progress=useRef(null);useEffect(()=>{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const lenis=new Lenis({duration:1.05,smoothWheel:true});lenis.on('scroll',ScrollTrigger.update);const tick=t=>lenis.raf(t*1000);gsap.ticker.add(tick);const update=()=>{if(progress.current)progress.current.style.transform=`scaleX(${window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)||0})`};window.addEventListener('scroll',update,{passive:true});return()=>{window.removeEventListener('scroll',update);gsap.ticker.remove(tick);lenis.destroy()}},[]);return <div className="page-shell"><div ref={progress} className="scroll-progress"/><Header/><main><Hero/><QuickLinks/><Stats/><Mission/><Projects/><Governance/></main><Footer/></div>}
