@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root { --ink:#0E1B18; --paper:#EDEAE0; --plot:#AE4A31; --ochre:#B48A42; --map:#4C6B71; --line:#C9C4B4; }
 html { scroll-behavior:smooth; background:var(--paper); }
-body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,Arial,sans-serif; }
+body { margin:0; background:#fff; color:var(--ink); font-family:Georgia,'Times New Roman',serif; }
 ::selection { background:var(--plot); color:white; }
 * { box-sizing:border-box; }
 :focus-visible { outline:2px solid var(--plot); outline-offset:4px; }
 @layer components {
-  .page-shell { @apply overflow-hidden bg-paper; }
+  .page-shell { @apply overflow-hidden bg-white; }
   .frame { @apply mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12; }
-  .mono-label { @apply font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-map; }
+  .mono-label { @apply font-display text-xs font-semibold uppercase tracking-[0.13em] text-plot; }
   .display { @apply font-display tracking-[-0.045em]; }
   .rule { @apply h-px bg-line; }
-  .text-link { @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-map transition-colors hover:text-plot; }
-  .button-plot { @apply inline-flex items-center gap-3 rounded-full bg-plot px-6 py-3.5 font-body text-sm font-semibold text-white transition-colors hover:bg-ink; }
-  .button-ink { @apply inline-flex items-center gap-3 rounded-full border border-ink px-6 py-3.5 font-body text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper; }
+  .text-link { @apply inline-flex items-center gap-2 font-display text-sm font-bold text-ink transition-colors hover:text-plot; }
+  .button-plot { @apply inline-flex items-center gap-3 bg-plot px-7 py-4 font-display text-sm font-bold text-white transition-colors hover:bg-ink; }
+  .button-ink { @apply inline-flex items-center gap-3 border-2 border-ink px-7 py-4 font-display text-sm font-bold text-ink transition-colors hover:bg-ink hover:text-white; }
+  .image-slot { @apply relative overflow-hidden bg-[#d8d4ca]; }
+  .image-slot::after { content:''; @apply absolute inset-0 bg-gradient-to-br from-black/5 to-black/20; }
 }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
