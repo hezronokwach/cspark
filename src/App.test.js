@@ -7,11 +7,22 @@ jest.mock('lenis', () => {
   }));
 });
 
+jest.mock('gsap', () => ({
+  __esModule: true,
+  default: {
+    registerPlugin: jest.fn(),
+    ticker: { add: jest.fn(), remove: jest.fn(), lagSmoothing: jest.fn() },
+    context: jest.fn((callback) => { callback(); return { revert: jest.fn() }; }),
+    fromTo: jest.fn(),
+    to: jest.fn(),
+  },
+}));
+
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders CSPARK hero heading', () => {
+test('renders the CSPARK planning hero', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Spatial Planning for/i);
+  const linkElement = screen.getByText(/Land and cities are public questions/i);
   expect(linkElement).toBeInTheDocument();
 });
