@@ -1,96 +1,63 @@
-This is a comprehensive design and build specification for a high-end, editorial-style consultancy website. Recreate this interface with a focus on precision typography, structured grid layouts, and sophisticated motion.
+# CSPARK Visual Completion and Motion Pass
 
-### 1. Design Identity
-The aesthetic is **"Modern Pan-African Professionalism."** It combines a clean, high-contrast editorial layout with a palette of deep charcoal, vibrant red, and forest green. The design uses bold, high-impact typography and large-scale photography to communicate authority, impact, and indigenous expertise.
+## Summary
 
-### 2. Colour Palette
-- **Background Primary:** `#FFFFFF` (Pure White)
-- **Background Secondary:** `#1A1A1A` (Deep Charcoal/Near Black)
-- **Accent Primary:** `#E31E24` (Vibrant Red) — used for CTAs, icons, and emphasis.
-- **Accent Secondary:** `#006838` (Forest Green) — used for high-impact content blocks.
-- **Text Primary:** `#1A1A1A` (on light) / `#FFFFFF` (on dark)
-- **Text Muted:** `#666666` (on light) / `#A1A1A1` (on dark)
-- **Border/Divider:** `#E5E5E5` (Subtle grey)
+Complete the editorial redesign with six original, photorealistic image assets, real scroll-driven animation, clearer project content, refined interaction details, and high-quality responsiveness across mobile, tablet, laptop, and large desktop layouts. The grey blocks shown in the screenshots are unfinished image placeholders; they will be replaced everywhere except the leadership cards, which remain intentionally image-free.
 
-### 3. Typography Forensics
-- **Primary Display & Headings:** **Inter** or **Public Sans**. 
-    - *Evidence:* Geometric sans-serif, high x-height, tight apertures, neutral but authoritative.
-    - *Styles:* 
-        - **H1 (Hero):** 72px/1.1 leading, ExtraBold (800).
-        - **H2 (Section):** 48px/1.2 leading, Bold (700).
-        - **H3 (Card):** 24px/1.3 leading, SemiBold (600).
-- **Body Text:** **Inter**. 
-    - *Styles:* 18px/1.6 leading, Regular (400).
-- **Editorial Accents:** Use a high-contrast Serif like **Playfair Display** or **Cormorant Garamond** for specific italicized emphasis (e.g., the word "Indigenous" in the hero).
-- **Labels/Buttons:** Inter, 14px, Bold (700), All-caps or Title Case with +0.05em tracking.
+## Visual and Content Changes
 
-### 4. Visual Asset Manifest
-1. `hero-meeting.avif`: High-resolution photo of a professional collaborative setting in an African context. Warm lighting, shallow depth of field. (Generate: "Professional African business meeting, modern office, warm natural light, high-end photography, 16:9")
-2. `impact-portrait.avif`: Portrait of a smiling woman in vibrant traditional-modern attire. (Generate: "Portrait of a smiling African woman, professional yet warm, soft bokeh background, 4:5 aspect ratio")
-3. `collaboration-group.avif`: Wide shot of a diverse team working around a table with maps/documents. (Generate: "Group of African professionals collaborating over documents and maps, top-down perspective, high detail, 16:9")
-4. `icon-set-red.svg`: Custom line-art icons (Scale, People, Book, Globe) in `#E31E24`.
-5. `news-thumbnails/*.avif`: Editorial-style photography for blog posts.
+- Generate and add six CSPARK-owned editorial photo assets:
+  - Wide hero: Kenyan planning workshop with maps and documents; room on the left for headline text.
+  - Tall track-record portrait: community member in a Kenyan urban setting.
+  - Mission image: diverse Kenyan residents and planners reviewing a physical map.
+  - Three project images: Lake Victoria shoreline/planning, Kisumu market traders, and settlement mapping with residents.
+- Use real `<img>` elements with meaningful alt text, fixed aspect ratios, `object-fit: cover`, and subtle dark overlays only where white hero text requires contrast.
+- Replace the project heading block with an immediately visible three-card grid directly beneath the heading; preserve the three real project subjects and remove the excessive empty vertical space.
+- Keep leadership panels image-free, but replace their grey blocks with elegant typographic profile panels using names, roles, and a subtle neutral background.
+- Refine buttons to a consistent `10px` rounded corner, orange-red primary state, visible focus ring, and restrained arrow movement on hover.
+- Tighten section heights and desktop spacing so no section has a large blank area before meaningful content begins.
 
-### 5. Section-by-Section Breakdown
+## Responsive Design
 
-#### Header (Sticky)
-- **Layout:** Flexbox, `justify-between`, `h-20`, white background.
-- **Elements:** 
-    - Left: Logo (South Consulting Africa Limited).
-    - Center: Nav links (Home, About Us, Services, Projects, Resources, Careers) in 14px SemiBold.
-    - Right: "Contact Us" CTA — Red background, white text, pill-shaped or slightly rounded (8px).
-- **Behavior:** Sticky with a subtle `shadow-sm` appearing after 50px scroll.
+- Use four intentional layout ranges: small mobile, large mobile, tablet, and desktop/wide desktop; do not rely on a single mobile breakpoint.
+- Keep the fixed header compact on small screens, with an accessible menu and full-width CTA only when the menu is open.
+- Reflow every two-column editorial section into a content-first single column on mobile, with media placed immediately before or after its paired copy.
+- Use responsive image aspect ratios: taller hero and portrait crops on mobile, balanced landscape crops on tablet, and editorial wide crops on desktop.
+- Change service, governance, and project grids from three/four columns to two columns on tablet and one column on narrow screens; preserve card order and equal card heights where appropriate.
+- Scale headings with fluid `clamp()` values, maintain readable body size and line length, and avoid horizontal scrolling at all viewport widths.
+- Preserve scroll animations on capable larger screens, simplify timing and parallax on tablet, and use static or minimal transitions on mobile and reduced-motion devices.
 
-#### Hero Section
-- **Layout:** Full-bleed, `min-h-[90vh]`, relative positioning.
-- **Background:** `hero-meeting.avif` with a 40% black overlay.
-- **Content:** 
-    - Large H1: "World-Class. *Indigenous.* Impact-Driven." 
-    - *Detail:* "Indigenous" is italicized serif and has a thick red underline.
-    - Paragraph: Max-width 600px, white text, 20px.
-    - CTA: "Read about us" button with a right-arrow icon.
-- **Newsletter Overlay (Bottom Right):** A floating card or integrated form with "First Name", "Email" inputs and a "Subscribe" button.
+## Animation and Interaction
 
-#### Services Quick-Links (Bento-style Grid)
-- **Layout:** 3-column grid, white background.
-- **Cards:** "Services", "Insights", "Projects".
-- **Styling:** Each card has a title, short description, and a "Find out more" link with a red circular arrow icon.
-- **Highlight:** The "Projects" card uses the Forest Green (`#006838`) background with white text to stand out.
+- Register GSAP ScrollTrigger once centrally and ensure every animated component uses it correctly.
+- Add section-specific reveals rather than one repeated effect:
+  - Hero image slowly parallax-scrolls while text reveals by line.
+  - Services reveal as a staggered grid with clip-mask image/frame movement.
+  - Track-record figures count up when first visible.
+  - Mission media wipes in horizontally while copy rises slightly.
+  - Project cards reveal with staggered image crop motion and image zoom on hover.
+  - Governance and footer enter with short directional reveals.
+- Add a thin fixed scroll-progress line beneath the header.
+- Use Lenis smooth scrolling only on non-reduced-motion devices and connect it to ScrollTrigger updates.
+- Preserve `prefers-reduced-motion`: no parallax, count-up, scrolling interpolation, or reveal animation; all content remains immediately visible.
 
-#### Impact Stats Section
-- **Layout:** 2-column split. 
-- **Left:** Vertical stack of stats (e.g., "66+ Impact in Action", "28+ Partners in Progress"). Large red numbers, muted grey labels.
-- **Right:** `impact-portrait.avif` with a slight parallax effect.
+## Asset Generation Prompts
 
-#### Mission Statement (Green Block)
-- **Layout:** Full-width, Forest Green background.
-- **Content:** Large white H2: "African-Led Solutions for Systemic Change".
-- **Grid:** 2x2 grid of text blocks below the heading, detailing focus areas (Human Rights, Gender Equality, etc.). Each block has a white H3 and white body text.
+- All images: photorealistic editorial photography, East African context, natural daylight, authentic clothing and environments, documentary rather than stock-photo posing, no logos, no text, no watermark.
+- Hero and mission: wide landscape compositions with deliberate negative space for web copy.
+- Track record: vertical portrait crop with a confident, natural subject and environmental context.
+- Projects: individual location-specific landscape images, composed for equal-height card crops.
 
-#### Expertise Grid (Icon Cards)
-- **Layout:** "From Policy Research to Program Delivery" heading. 3-column grid of cards.
-- **Card Design:** White background, subtle border. Top-left: Red line icon. Center: H3 Title. Bottom: "Explore" link.
-- **Hover:** Card lifts 8px, border changes to red.
+## Verification
 
-#### News & Insights
-- **Layout:** Horizontal row of 4 cards.
-- **Card Design:** Image at top, date badge (red background), H3 title, "Read more" link.
-- **Header:** "Our Latest News" on left, "Read All News" button on right.
+- Confirm generated image files are stored under the project’s public assets and each referenced path loads in production.
+- Verify all six content sections have no placeholder grey panels, while leadership remains intentionally non-photographic.
+- Test at 320px, 375px, 768px, 1024px, 1440px, and 1920px widths; check image crops, navigation, typography, cards, and no horizontal overflow.
+- Test scrolling, image hover, focus states, navigation underline, touch targets, and reduced-motion behavior.
+- Run the production build and test suite after implementation.
 
-#### Footer
-- **Layout:** Deep charcoal background, 4-column layout.
-- **Columns:** Contact Info (with red icons), News & Insights, Get Involved, Resources, Social Media (circular icons).
-- **Bottom Bar:** Copyright and legal links, separated by dividers.
+## Assumptions
 
-### 6. Animations and Interactions
-- **Scroll Driver:** Implement **Lenis** for smooth inertial scrolling.
-- **Entrance Reveals:** Use GSAP `ScrollTrigger` to reveal sections. 
-    - *Pattern:* `y: 40, opacity: 0` to `y: 0, opacity: 1` with `power2.out`, duration 0.8s.
-- **Staggered Text:** Use GSAP `SplitText` to reveal the Hero H1 line-by-line.
-- **Hover Effects:** 
-    - Buttons: Scale 1.02, background color shift.
-    - Links: The circular arrow icon should rotate 45 degrees or slide 5px to the right.
-- **Parallax:** Apply a subtle `yPercent: -10` to the large portrait images as they pass through the viewport.
-
-### 7. Build Instruction
-Build this as a React application using Tailwind CSS. Implement every section and produce the asset manifest before composing the page: generate the specified images when image generation is available, otherwise source them using the supplied queries. Do not use generic placeholders for prominent visuals. Match the visual design, spacing, colour palette, forensic typography specification, and motion as closely as possible. Use CSS transitions for simple state changes and GSAP with `@gsap/react` for coordinated timelines. Use ScrollTrigger for all scroll-triggered reveals and parallax. Implement the Lenis-plus-ScrollTrigger architecture for smooth scrolling: instantiate Lenis, drive it via the GSAP ticker, and ensure `ScrollTrigger.update()` is called on every scroll event. Scope animations to their components and clean up on unmount. Provide a `prefers-reduced-motion` fallback that disables the smooth scroll and simplifies transitions to basic opacities.
+- Generated imagery is used as temporary but production-quality visual content until CSPARK supplies approved photography.
+- Leadership photos are explicitly out of scope for this pass.
+- Existing project names, statistics, team names, and contact details remain unchanged.
