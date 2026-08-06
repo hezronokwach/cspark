@@ -16,10 +16,14 @@ body { margin:0; background:#fff; color:var(--ink); font-family:Georgia,'Times N
   .display { @apply font-display tracking-[-0.045em]; }
   .rule { @apply h-px bg-line; }
   .text-link { @apply inline-flex items-center gap-2 font-display text-sm font-bold text-ink transition-colors hover:text-plot; }
-  .action-link { @apply inline-flex items-center gap-3 rounded-full border border-plot/30 bg-plot/5 px-4 py-2 font-display text-sm font-bold text-plot transition-all hover:bg-plot hover:text-white; }
-  .button-plot { @apply inline-flex items-center gap-3 rounded-[10px] bg-plot px-7 py-4 font-display text-sm font-bold text-white transition-colors hover:bg-ink; }
+  .action-link,.button-plot { @apply inline-flex items-center gap-3 rounded-[10px] px-5 py-3 font-display text-sm font-bold text-ink transition-all; background:linear-gradient(110deg,#efe9dc,#e5c99d,#d9a28c,#efe9dc); background-size:220% 100%; }
+  .action-link:hover,.button-plot:hover { background-position:100% 0; transform:translateY(-2px); }
+  .button-plot { @apply px-7 py-4 text-white; background:linear-gradient(110deg,#9b402d,#b9573e,#c4795d,#9b402d); background-size:220% 100%; }
   .button-ink { @apply inline-flex items-center gap-3 rounded-[10px] border-2 border-ink px-7 py-4 font-display text-sm font-bold text-ink transition-colors hover:bg-ink hover:text-white; }
   .image-slot { @apply relative overflow-hidden bg-[#d8d4ca]; }
   .image-slot::after { content:''; @apply absolute inset-0 bg-gradient-to-br from-black/5 to-black/20; }
 }
+.cursor-card{position:relative;overflow:hidden}.cursor-card::before{content:'';position:absolute;inset:0;background:radial-gradient(180px circle at var(--mx,-100px) var(--my,-100px),rgba(174,74,49,.18),transparent 65%);pointer-events:none;opacity:0;transition:opacity .25s}.cursor-card:hover::before{opacity:1}
+.flip-wrap{perspective:1000px}.flip-inner{position:relative;min-height:340px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1)}.flip-wrap:hover .flip-inner,.flip-wrap.is-flipped .flip-inner{transform:rotateY(180deg)}.flip-face{position:absolute;inset:0;backface-visibility:hidden}.flip-back{transform:rotateY(180deg)}
+@media (pointer:coarse),(prefers-reduced-motion:reduce){.cursor-card::before{display:none}.flip-inner{transition:none}.flip-wrap:hover .flip-inner{transform:none}}
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; } }
