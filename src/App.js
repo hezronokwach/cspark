@@ -18,6 +18,7 @@ import WhatWeDo from './pages/WhatWeDo';
 import ServicePage from './pages/ServicePage';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectPage from './pages/ProjectPage';
+import AboutPage from './pages/AboutPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -72,6 +73,7 @@ export default function App() {
             <Route path="/what-we-do/:slug" element={<ServicePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
         <Footer />

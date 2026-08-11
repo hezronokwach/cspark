@@ -9,7 +9,7 @@ const projDropdown = projects.map((p) => [`${p.title} — ${p.place}`, `/project
 const navItems = [
   { label: 'Home', href: '/', isPage: true },
   { label: 'What we do', href: '/what-we-do', isPage: true, dropdown: wwdDropdown },
-  { label: 'About CSPARK', href: '/#about', isPage: false },
+  { label: 'About CSPARK', href: '/about', isPage: true },
   { label: 'Projects', href: '/projects', isPage: true, dropdown: projDropdown },
   { label: 'Governance', href: '/#governance', isPage: false },
   { label: 'Contact', href: '/#contact', isPage: false },
