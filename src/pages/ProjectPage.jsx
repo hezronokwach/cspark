@@ -13,12 +13,14 @@ export default function ProjectPage() {
   const project = getProject(slug);
   const heroRef = useRef(null);
   const bodyRef = useRef(null);
+  const galleryRef = useRef(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const ctx = gsap.context(() => {
       gsap.fromTo('.proj-hero > *', { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85, stagger: 0.12, ease: 'power3.out' });
       gsap.to('.proj-hero-img', { yPercent: 15, ease: 'none', scrollTrigger: { trigger: heroRef.current, start: 'top top', end: 'bottom top', scrub: 0.4 } });
+      gsap.fromTo('.proj-gallery-item', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.12, ease: 'power2.out', scrollTrigger: { trigger: galleryRef.current, start: 'top 80%', once: true } });
       gsap.fromTo('.proj-body', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: bodyRef.current, start: 'top 85%', once: true } });
     });
     return () => ctx.revert();
@@ -60,6 +62,54 @@ export default function ProjectPage() {
           </h1>
         </div>
       </section>
+
+      {project.gallery && project.gallery.length > 0 && (
+        <section ref={galleryRef} className="py-16 sm:py-20 bg-paper">
+          <div className="frame">
+            <p className="mono-label">Gallery</p>
+            <h2 className="display mt-4 font-extrabold text-3xl md:text-4xl tracking-[-0.04em] text-ink leading-tight max-w-2xl mb-10">
+              From the field.
+            </h2>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {project.gallery.map((item, i) => (
+                <div
+                  key={i}
+                  className={`proj-gallery-item opacity-0 group overflow-hidden rounded-[12px] bg-white ${i === 0 ? 'sm:col-span-2' : ''}`}
+                >
+                  {item.type === 'video' ? (
+                    <div className="media-frame">
+                      <video
+                        src={item.src}
+                        poster={item.poster}
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                      />
+                    </div>
+                  ) : (
+                    <div className={`media-frame ${i === 0 ? 'h-64 sm:h-80 md:h-96' : 'h-56 sm:h-64'}`}>
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  {item.caption && (
+                    <p className="px-5 py-4 text-sm text-map leading-relaxed border-t border-line">
+                      {item.caption}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Challenge / Approach / Outcome */}
       <section ref={bodyRef} className="py-20 bg-white">

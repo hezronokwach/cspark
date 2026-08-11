@@ -39,7 +39,7 @@ export default function Footer() {
         <div>
           <h3 className="font-display font-bold text-plot">Explore</h3>
           <div className="mt-4 grid gap-2 text-white/70">
-            <Link to="/#about">About</Link>
+            <Link to="/about">About</Link>
             <Link to="/what-we-do">What we do</Link>
             <Link to="/#projects">Projects</Link>
           </div>

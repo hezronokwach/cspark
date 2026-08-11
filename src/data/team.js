@@ -1,0 +1,66 @@
+export const team = [
+  {
+    slug: 'walter-alando',
+    name: 'Dr. Walter Alando',
+    role: 'Executive Director',
+    speciality: 'Transport & Urban Development Planning',
+    quote: 'Planning that ignores the people it serves will always fail them.',
+    bio: 'Urban development practitioner and researcher working across transport, governance, climate resilience and GIS. Has consulted for international governmental organisations, the national government of Kenya, municipalities across Kenya and East Africa, county governments, private-sector organisations and NGOs. Corporate member of the Kenya Institute of Planners; lead member of the Environment Institute of Kenya.',
+    memberships: 'KIP · EIK',
+    social: { linkedin: 'https://linkedin.com/in/walter-alando', twitter: 'https://twitter.com/walando' },
+  },
+  {
+    slug: 'mildred-ambani',
+    name: 'Mildred Ambani',
+    role: 'Director of Research',
+    speciality: 'GIS & Urban Management',
+    quote: 'Data without community context is just noise on a map.',
+    bio: 'A specialist in geographic information systems who supports data-led planning across Kenyan counties. Her work bridges spatial analysis with participatory research, ensuring that maps and datasets reflect the lived realities of the communities they describe.',
+    memberships: 'GIS · Urban Management',
+    social: { linkedin: 'https://linkedin.com/in/mildred-ambani' },
+  },
+  {
+    slug: 'nicodemus-mbwika',
+    name: 'Nicodemus Mbwika',
+    role: 'Director of Programmes',
+    speciality: 'Governance & Project Management',
+    quote: 'Accountability is not a checkbox — it is how we earn trust.',
+    bio: 'A governance and delivery specialist focused on accountable programmes and strong partnerships. He oversees CSPARK\'s project portfolio, ensuring that every engagement meets the standards of transparency and rigour that funders and communities expect.',
+    memberships: 'Governance · Delivery',
+    social: { linkedin: 'https://linkedin.com/in/nicodemus-mbwika' },
+  },
+  {
+    slug: 'kim-okoth',
+    name: 'Kim Okoth',
+    role: 'Director of Corporate Services',
+    speciality: 'Management Science',
+    quote: 'Strong systems behind the scenes make strong impact on the ground.',
+    bio: 'A management science specialist who keeps CSPARK\'s operations, finance and human resources aligned with the organisation\'s mission. Her work ensures that every programme is backed by sound administration and institutional resilience.',
+    memberships: 'Management · Operations',
+    social: { linkedin: 'https://linkedin.com/in/kim-okoth' },
+  },
+  {
+    slug: 'emmanuel-midheme',
+    name: 'Emmanuel Midheme',
+    role: 'Director of Advocacy & Lobbying',
+    speciality: 'Land Management & Environment',
+    quote: 'Land is where policy meets survival.',
+    bio: 'A land management and environment specialist whose research connects tenure security, environmental sustainability and spatial justice. His advocacy work translates community evidence into policy frameworks that protect the most vulnerable.',
+    memberships: 'Land · Environment',
+    social: { linkedin: 'https://linkedin.com/in/emmanuel-midheme', twitter: 'https://twitter.com/emidheme' },
+  },
+  {
+    slug: 'amos-kasimu',
+    name: 'Amos Kasimu',
+    role: 'Senior Urban Planner',
+    speciality: 'Urban Planning',
+    quote: 'Every plan should start with the street, not the office.',
+    bio: 'An urban planner with deep experience in participatory settlement mapping, relocation action plans and county-level spatial frameworks. He works directly with communities to co-produce plans that reflect their priorities and protect their rights.',
+    memberships: 'Planning · Community',
+    social: { linkedin: 'https://linkedin.com/in/amos-kasimu' },
+  },
+];
+
+export function getTeamMember(slug) {
+  return team.find((t) => t.slug === slug);
+}
