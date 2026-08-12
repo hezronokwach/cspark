@@ -133,7 +133,7 @@ export default function ServicePage() {
               Ready to start a <span className="text-plot">project</span>?
             </h2>
             <p className="mt-3 text-white/65 max-w-xl text-lg font-body">
-              Talk to us about your planning needs — from research to implementation support.
+              Talk to us about your planning needs ,  from research to implementation support.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">

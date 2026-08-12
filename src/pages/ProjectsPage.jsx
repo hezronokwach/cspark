@@ -37,7 +37,7 @@ export default function ProjectsPage() {
             Work with <span className="text-plot">communities.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/75 leading-relaxed font-body">
-            Real projects, real communities — each one showing how spatial research becomes spatial justice.
+            Real projects, real communities ,  each one showing how spatial research becomes spatial justice.
           </p>
         </div>
       </section>

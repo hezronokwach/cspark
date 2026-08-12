@@ -4,7 +4,7 @@ import { services } from '../data/services';
 import { projects } from '../data/projects';
 
 const wwdDropdown = services.map((s) => [s.title, `/what-we-do/${s.slug}`]);
-const projDropdown = projects.map((p) => [`${p.title} — ${p.place}`, `/projects/${p.slug}`]);
+const projDropdown = projects.map((p) => [`${p.title} ,  ${p.place}`, `/projects/${p.slug}`]);
 
 const navItems = [
   { label: 'Home', href: '/', isPage: true },
