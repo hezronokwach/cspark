@@ -23,7 +23,7 @@ export const projects = [
     image: '/images/project-kisumu-market.jpg',
     summary: 'We worked with traders to collect the evidence needed for better markets and safer places to work.',
     challenge: 'Street traders in Kisumu faced eviction, displacement and insecurity, working without formal recognition or data that could support their right to space in the city. County planning decisions affecting them were being made without evidence about their numbers, locations or needs.',
-    approach: 'CSPARK led a participatory enumeration process — traders mapped their own operating locations, trade types and daily patterns. This data was validated through community workshops and translated into a format usable by the county for spatial and market planning.',
+    approach: 'CSPARK led a participatory enumeration process ,  traders mapped their own operating locations, trade types and daily patterns. This data was validated through community workshops and translated into a format usable by the county for spatial and market planning.',
     outcome: 'A detailed enumeration report providing evidence for inclusive market planning and secure trading spaces. The data has informed Kisumu County\'s approach to street trader integration and market infrastructure decisions.',
     gallery: [
       { type: 'image', src: '/images/project-kisumu-market.jpg', alt: 'Kisumu street traders enumeration', caption: 'Street traders participating in the self-enumeration process in Kisumu.' },

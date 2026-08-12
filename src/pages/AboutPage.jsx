@@ -7,9 +7,10 @@ import { team } from '../data/team';
 gsap.registerPlugin(ScrollTrigger);
 
 const values = [
-  { title: 'Participation', copy: 'Broad-based stakeholder engagement and teamwork — planning with communities, not for them.' },
-  { title: 'Integrity', copy: 'Rigorous research and honest dealings — evidence that stands up to scrutiny.' },
+  { title: 'Participation', copy: 'Broad-based stakeholder engagement and teamwork ,  planning with communities, not for them.' },
+  { title: 'Integrity', copy: 'Rigorous research and honest dealings ,  evidence that stands up to scrutiny.' },
   { title: 'Respect', copy: 'Gender, cultural and socio-economic diversity recognised in every engagement.' },
+  { title: 'Social Good', copy: 'Upholding the best interest of society at large in every plan, study and recommendation.' },
   { title: 'Accountability', copy: 'Financial and social accountability to partners, communities and society.' },
 ];
 
@@ -244,13 +245,33 @@ export default function AboutPage() {
               Planning that starts with the people it serves.
             </h2>
             <p className="text-lg text-map leading-relaxed">
-              CSPARK — the Centre for Spatial Planning Advocacy and Research in Kenya — was founded to address a persistent gap: spatial plans were being produced by governments and consultants, but the communities most affected by those plans had little say in them. The result was plans that sat on shelves, disconnected from the streets, markets and settlements they were meant to shape.
+              CSPARK ,  the Centre for Spatial Planning Advocacy and Research in Kenya ,  was founded to address a persistent gap: spatial plans were being produced by governments and consultants, but the communities most affected by those plans had little say in them. The result was plans that sat on shelves, disconnected from the streets, markets and settlements they were meant to shape.
             </p>
             <p className="text-lg text-map leading-relaxed">
-              We work differently. Every project begins with the people who will live with the outcome — traders, families in informal settlements, fishing communities, county officials. We generate the evidence they need, translate it into actionable frameworks, and stay with the work through implementation.
+              We work differently. Every project begins with the people who will live with the outcome ,  traders, families in informal settlements, fishing communities, county officials. We generate the evidence they need, translate it into actionable frameworks, and stay with the work through implementation.
             </p>
             <p className="text-lg text-map leading-relaxed">
-              Registered as an NGO under the NGO Co-ordination Act of 1990, CSPARK operates across Kenya's counties — from Kisumu and Nairobi to Nakuru, Eldoret, Mombasa and the Lake Victoria basin — linking grassroots evidence to county and national planning processes.
+              Registered as an NGO under the NGO Co-ordination Act of 1990, CSPARK operates across Kenya's counties ,  from Kisumu and Nairobi to Nakuru, Eldoret, Mombasa and the Lake Victoria basin ,  linking grassroots evidence to county and national planning processes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28 bg-paper">
+        <div className="frame max-w-3xl mx-auto">
+          <p className="mono-label">Our Approach</p>
+          <h2 className="display mt-4 font-extrabold text-3xl md:text-4xl tracking-[-0.04em] text-ink leading-tight mb-8">
+            Campaigning the cause.
+          </h2>
+          <div className="space-y-6 text-lg text-map leading-relaxed">
+            <p>
+              CSPARK believes that it is possible to achieve social justice through informed and responsive spatial planning. This belief notwithstanding, there exists a gap in the manner in which spatial planning is currently undertaken, majorly by state organs. Due to their legal mandates and institutional inertia, these state organs have ended up producing plans which are either rigid or simply produced as an end in itself and therefore have little bearing in helping address the plight of the most vulnerable in the society.
+            </p>
+            <p>
+              CSPARK believes that it is possible to make these plans useful for the socio-economic transformation that spatial planning strives to achieve. As such, it strives to partner with both state and non-state actors and to leverage its strength to bridge the current gap between spatial planning, implementation, and social justice.
+            </p>
+            <p>
+              To this end, CSPARK will avail its expertise in research, stakeholder engagement, spatial planning, governance, and reach out to like-minded institutions to provide other resources that are needed to achieve social justice through spatial planning. The organisation will carry out researches to find out the concerns that spatial planning needs to pay attention to and also rally the implementing agencies to initiate projects that address these concerns.
             </p>
           </div>
         </div>
@@ -291,7 +312,7 @@ export default function AboutPage() {
           <h2 className="display mt-4 font-extrabold text-4xl md:text-5xl tracking-[-0.04em] text-ink leading-tight max-w-2xl mb-16">
             What guides every decision.
           </h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {values.map((v, i) => (
               <article key={v.title} className="about-value-card opacity-0 group relative overflow-hidden rounded-[16px] bg-paper p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
                 <div className="absolute inset-0 bg-gradient-to-br from-plot/0 via-plot/0 to-plot/10 group-hover:from-plot/5 group-hover:via-plot/10 group-hover:to-plot/20 transition-all duration-500" />

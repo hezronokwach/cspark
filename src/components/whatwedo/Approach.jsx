@@ -8,7 +8,7 @@ const steps = [
   {
     n: '01',
     title: 'Participatory research',
-    description: 'We enumerate, map and listen — gathering data directly from the communities and informal actors whose lives are shaped by planning decisions.',
+    description: 'We enumerate, map and listen ,  gathering data directly from the communities and informal actors whose lives are shaped by planning decisions.',
   },
   {
     n: '02',

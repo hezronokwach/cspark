@@ -28,7 +28,7 @@ export default function WhatWeDoCTA() {
               Bring us into your <span className="text-plot">planning process</span>
             </h2>
             <p className="mt-3 text-white/65 max-w-xl text-lg font-body">
-              Whether you are a county government, funder or community group — our expertise is yours to draw on.
+              Whether you are a county government, funder or community group ,  our expertise is yours to draw on.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 shrink-0">

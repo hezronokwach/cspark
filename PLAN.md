@@ -1,8 +1,8 @@
-# CSPARK Website — Design & Build Plan
+# CSPARK Website ,  Design & Build Plan
 
 ## Concept: "Planning for Justice"
 
-An editorial, research-driven aesthetic for a spatial planning NGO. The visual language evokes maps, land, urban grids, and community — the core of spatial planning.
+An editorial, research-driven aesthetic for a spatial planning NGO. The visual language evokes maps, land, urban grids, and community ,  the core of spatial planning.
 
 ## Color Palette
 
@@ -26,15 +26,15 @@ An editorial, research-driven aesthetic for a spatial planning NGO. The visual l
 
 ## Page Sections (Home)
 
-1. **Sticky Header** — Logo, nav, "Partner With Us" CTA
-2. **Hero** — "Spatial Planning for *Social Justice*" with topographic SVG pattern
-3. **Thematic Quick-Links (Bento Grid)** — What We Do / Projects / Publications
-4. **Impact Stats** — Animated counters (11+ Counties, 6 Thematic Areas, 20+ Studies, 5+ Years)
-5. **Mission Statement (Green Block)** — 2×2 grid of focus areas
-6. **Featured Projects** — 2–3 project cards
-7. **Governance & Transparency strip** — Grant-readiness credibility
-8. **News & Insights** — Horizontal cards
-9. **Footer** — 4-column, registration number, legal links
+1. **Sticky Header** ,  Logo, nav, "Partner With Us" CTA
+2. **Hero** ,  "Spatial Planning for *Social Justice*" with topographic SVG pattern
+3. **Thematic Quick-Links (Bento Grid)** ,  What We Do / Projects / Publications
+4. **Impact Stats** ,  Animated counters (11+ Counties, 6 Thematic Areas, 20+ Studies, 5+ Years)
+5. **Mission Statement (Green Block)** ,  2×2 grid of focus areas
+6. **Featured Projects** ,  2–3 project cards
+7. **Governance & Transparency strip** ,  Grant-readiness credibility
+8. **News & Insights** ,  Horizontal cards
+9. **Footer** ,  4-column, registration number, legal links
 
 ## Tech Stack
 

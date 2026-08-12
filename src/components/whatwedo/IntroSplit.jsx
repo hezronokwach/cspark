@@ -39,7 +39,7 @@ export default function IntroSplit() {
             Plans exist. We make them <span className="text-plot">work.</span>
           </h2>
           <p className="mt-6 text-lg text-map leading-relaxed">
-            Kenya produces no shortage of spatial plans. Too many of them sit on shelves —
+            Kenya produces no shortage of spatial plans. Too many of them sit on shelves , 
             drafted far from the markets, settlements and streets they are meant to shape.
             When planning loses touch with people, it deepens the inequality it was meant to fix.
           </p>

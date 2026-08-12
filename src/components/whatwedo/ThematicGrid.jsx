@@ -74,7 +74,7 @@ const themes = [
   },
   {
     title: 'Gender Mainstreaming',
-    description: 'A cross-cutting commitment — equality woven through every plan, research agenda and advocacy effort.',
+    description: 'A cross-cutting commitment ,  equality woven through every plan, research agenda and advocacy effort.',
     slug: 'gender-mainstreaming',
     mark: (
       <g>
