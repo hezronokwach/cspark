@@ -50,6 +50,7 @@ function TeamSection() {
 
     let timeoutId;
     let stRef = null;
+    let tlRef = null;
 
     const scrollToMember = () => {
       if (!stRef) return;
@@ -58,8 +59,14 @@ function TeamSection() {
       if (idx < 0) return;
       const count = team.length;
       const p = idx === 0 ? 0 : Math.min(1, (idx - 0.2) / (count - 1.2));
+      // Temporarily disable smooth scrolling so the jump is instant — no
+      // visible scroll through the pinned transitions.
+      const prevBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      if (tlRef) tlRef.progress(p);
       const target = stRef.start + (stRef.end - stRef.start) * p;
       window.scrollTo(0, target);
+      document.documentElement.style.scrollBehavior = prevBehavior;
       ScrollTrigger.update();
     };
 
@@ -83,6 +90,7 @@ function TeamSection() {
         },
       });
       stRef = tl.scrollTrigger;
+      tlRef = tl;
 
       for (let i = 1; i < count; i++) {
         const outText = textEls[i - 1];
