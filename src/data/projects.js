@@ -35,11 +35,11 @@ export const projects = [
   },
   {
     slug: 'settlement-mapping',
-    place: 'Nairobi & Nakuru',
+    place: 'Kisumu',
     title: 'Informal Settlement Mapping & Relocation Action Plans',
     image: '/images/project-settlement-mapping.jpg',
     summary: 'We mapped homes and services so families could take part in decisions about settlement upgrades.',
-    challenge: 'Residents of informal settlements in Nairobi and Nakuru lacked secure tenure and were being excluded from infrastructure upgrades and affordable housing projects. Without detailed household-level data, planning decisions affecting their lives were made without their participation.',
+    challenge: 'Residents of informal settlements in Kisumu lacked secure tenure and were being excluded from infrastructure upgrades and affordable housing projects. Without detailed household-level data, planning decisions affecting their lives were made without their participation.',
     approach: 'CSPARK conducted detailed household enumeration and mapping in informal settlements. The resulting data was used to develop Relocation Action Plans that prioritise community needs, tenure security and infrastructure access. Throughout the process, residents were treated as partners, not subjects.',
     outcome: 'Detailed household maps and Relocation Action Plans that put affected families at the centre of upgrading decisions. The plans have been adopted as reference documents by county planning teams working on settlement formalisation.',
     gallery: [

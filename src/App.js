@@ -30,9 +30,9 @@ function HomePage() {
       <Hero />
       <QuickLinks />
       <Stats />
-      <Mission />
       <Projects />
       <Governance />
+      <Mission />
     </div>
   );
 }

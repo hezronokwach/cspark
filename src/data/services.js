@@ -58,7 +58,7 @@ export const services = [
     ],
     focusAreas: [
       'Participatory solid waste management frameworks',
-      'Mobility pattern research in Nairobi and Kisumu',
+      'Mobility pattern research in Kisumu',
       'County Green Energy Plans for multiple counties',
       'Research on informal co-production of urban services',
       'Linking informal and formal transport modes in county planning',
@@ -117,8 +117,8 @@ export const services = [
   },
   {
     slug: 'gender-mainstreaming',
-    title: 'Gender Mainstreaming',
-    tagline: 'Equality woven through every plan.',
+    title: 'Gender, Equity, Diversity & Social Inclusion',
+    tagline: 'Equality and inclusion woven through every plan.',
     heroImage: '/images/hero-planning.jpg',
     intro: [
       'For CSPARK, gender is not a separate project ,  it is a lens applied to every plan, every research agenda and every advocacy effort.',

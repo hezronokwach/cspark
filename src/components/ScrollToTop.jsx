@@ -7,11 +7,14 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
+      const isDesktopTeamHash = hash.startsWith('#team-') && window.innerWidth >= 768;
+      if (isDesktopTeamHash) return;
       let attempts = 0;
       const maxAttempts = 6;
+      const target = hash.startsWith('#team-') ? `#member-${hash.slice(6)}` : hash;
       const tryScroll = () => {
         attempts++;
-        const el = document.querySelector(hash);
+        const el = document.querySelector(target);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
           return;

@@ -6,7 +6,7 @@ const services = [
   ['Spatial planning', 'spatial-planning-governance', 'County and local plans that reflect the needs of the people who use a place.'],
   ['Urban livelihoods', 'urban-livelihoods', 'Evidence and practical support for traders, markets and public spaces.'],
   ['Housing and services', 'urban-housing', 'Mapping and planning that puts families at the centre of settlement upgrades.'],
-  ['Gender and inclusion', 'gender-mainstreaming', 'Research that makes sure planning works for women and excluded groups.'],
+  ['Gender, equity & inclusion', 'gender-mainstreaming', 'Research that makes sure planning works for women and excluded groups.'],
 ];
 
 export default function QuickLinks() {

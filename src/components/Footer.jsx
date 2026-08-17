@@ -33,7 +33,7 @@ export default function Footer() {
         <div>
           <h3 className="font-display font-bold text-plot">Contact</h3>
           <p className="mt-4 leading-relaxed text-white/70">
-            Nairobi, Kenya<br />+254 700 000 000<br />info@cspark.org
+            P. O. Box 7444 - 40100 Kisumu<br />Kisumu, Kenya<br />+254 794055805<br />info@cspark.org
           </p>
         </div>
         <div>
