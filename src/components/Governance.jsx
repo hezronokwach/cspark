@@ -4,13 +4,12 @@ import gsap from 'gsap';
 
 const records = [
   ['Participatory research', 'We work with communities and county teams who will use the results.'],
-  ['Audited accounts', 'We keep clear financial records and carry out annual audits.'],
   ['Safeguarding', 'Safeguarding guides every programme, study and field activity.'],
   ['Data protection', 'We handle personal information with care and follow Kenya\'s law.']
 ];
 
 const people = [
-  { slug: 'walter-alando', name: 'Dr. Walter Alando', specialty: 'Transport and urban development planning', bio: 'Urban development practitioner and researcher working across transport, governance and climate resilience.', memberships: 'KIP · EIK', social: { linkedin: 'https://linkedin.com/in/walter-alando', twitter: 'https://twitter.com/walando' } },
+  { slug: 'walter-alando', name: 'Dr. Walter Alando', specialty: 'Transport and urban development planning', bio: 'Urban development practitioner and researcher working across transport, governance and climate resilience.', memberships: 'KIP · EIK', image: '/images/alando.jpeg', social: { linkedin: 'https://linkedin.com/in/walter-alando', twitter: 'https://twitter.com/walando' } },
   { slug: 'mildred-ambani', name: 'Mildred Ambani', specialty: 'GIS and urban management', bio: 'A specialist in geographic information systems who supports data-led planning across Kenyan counties.', memberships: 'GIS · Urban management', social: { linkedin: 'https://linkedin.com/in/mildred-ambani' } },
   { slug: 'nicodemus-mbwika', name: 'Nicodemus Mbwika', specialty: 'Governance and project management', bio: 'A governance and delivery specialist focused on accountable programmes and strong partnerships.', memberships: 'Governance · Delivery', social: { linkedin: 'https://linkedin.com/in/nicodemus-mbwika' } },
   { slug: 'kim-okoth', name: 'Kim Okoth', specialty: 'Management science', bio: 'A management science specialist who keeps CSPARK\'s operations, finance and human resources aligned with the organisation\'s mission.', memberships: 'Management · Operations', social: { linkedin: 'https://linkedin.com/in/kim-okoth' } },
@@ -43,14 +42,20 @@ function SocialLinks({ social }) {
 function TeamCard({ person, index }) {
   return (
     <article className="rounded-[12px] bg-[#ece7dc] p-7 flex flex-col">
-      <div className="grid h-64 place-items-center rounded-[10px] bg-ink text-6xl font-display font-extrabold text-plot/70">
-        {String(index + 1).padStart(2, '0')}
-      </div>
+      {person.image ? (
+        <div className="media-frame h-64 rounded-[10px] overflow-hidden">
+          <img src={person.image} alt={person.name} className="h-full w-full object-cover" />
+        </div>
+      ) : (
+        <div className="grid h-64 place-items-center rounded-[10px] bg-ink text-6xl font-display font-extrabold text-plot/70">
+          {String(index + 1).padStart(2, '0')}
+        </div>
+      )}
       <h3 className="display mt-6 text-2xl font-extrabold">{person.name}</h3>
       <p className="mt-2 text-map">{person.specialty}</p>
       <p className="mt-3 text-sm text-map/80 line-clamp-3">{person.bio}</p>
       <div className="mt-auto pt-6 flex items-center justify-between">
-        <Link to="/about#team" className="action-link">
+        <Link to={`/about#team-${person.slug}`} className="action-link">
           View profile <span>→</span>
         </Link>
         <SocialLinks social={person.social} />
@@ -87,7 +92,7 @@ export default function Governance() {
           </div>
           <p className="self-end max-w-2xl text-lg leading-relaxed">Our policies and processes help partners see how we work and help communities know what to expect from us.</p>
         </div>
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {records.map(([title, copy]) => (
             <article onPointerMove={mouse} className="gov-card cursor-card rounded-[12px] bg-paper p-7 opacity-0 transition-transform hover:-translate-y-1 hover:shadow-lg" key={title}>
               <span className="grid h-9 w-9 place-items-center rounded-full bg-plot font-display font-bold text-white">+</span>

@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { team } from '../data/team';
@@ -39,6 +39,7 @@ function SocialLinks({ social }) {
 function TeamSection() {
   const sectionRef = useRef(null);
   const pinRef = useRef(null);
+  const location = useLocation();
   const noMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
@@ -46,6 +47,21 @@ function TeamSection() {
     const section = sectionRef.current;
     const pin = pinRef.current;
     if (!section || !pin) return;
+
+    let timeoutId;
+    let stRef = null;
+
+    const scrollToMember = () => {
+      if (!stRef) return;
+      const slug = location.hash.replace(/^#team-/, '');
+      const idx = team.findIndex((m) => m.slug === slug);
+      if (idx < 0) return;
+      const count = team.length;
+      const p = idx === 0 ? 0 : Math.min(1, (idx - 0.2) / (count - 1.2));
+      const target = stRef.start + (stRef.end - stRef.start) * p;
+      window.scrollTo(0, target);
+      ScrollTrigger.update();
+    };
 
     const ctx = gsap.context(() => {
       const textEls = gsap.utils.toArray('.team-text-block');
@@ -66,6 +82,7 @@ function TeamSection() {
           anticipatePin: 1,
         },
       });
+      stRef = tl.scrollTrigger;
 
       for (let i = 1; i < count; i++) {
         const outText = textEls[i - 1];
@@ -78,10 +95,32 @@ function TeamSection() {
           .to(inText, { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power2.out' }, i - 0.7)
           .to(inImg, { autoAlpha: 1, scale: 1, duration: 0.5, ease: 'power2.out' }, i - 0.7);
       }
+
+      if (location.hash.match(/^#team-/)) {
+        timeoutId = setTimeout(() => {
+          ScrollTrigger.refresh();
+          scrollToMember();
+        }, 250);
+      }
     }, section);
 
-    return () => ctx.revert();
-  }, [noMotion]);
+    const onLoad = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        ScrollTrigger.refresh();
+        scrollToMember();
+      }, 150);
+    };
+    if (location.hash.match(/^#team-/)) {
+      window.addEventListener('load', onLoad);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('load', onLoad);
+      ctx.revert();
+    };
+  }, [noMotion, location.hash]);
 
   if (noMotion) {
     return (
@@ -93,13 +132,19 @@ function TeamSection() {
           </h2>
           <div className="mt-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {team.map((member, i) => (
-              <div key={member.slug} className="flex flex-col">
-                <div className="aspect-[4/5] rounded-[12px] bg-white flex flex-col items-center justify-center p-8 shadow-sm">
-                  <div className="grid h-28 w-28 place-items-center rounded-[10px] bg-ink text-4xl font-display font-extrabold text-plot/70">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  <h3 className="display mt-6 text-xl font-extrabold text-ink">{member.name}</h3>
-                  <p className="mt-1 text-sm font-display font-semibold text-plot">{member.role}</p>
+              <div key={member.slug} id={`member-${member.slug}`} className="flex flex-col">
+                <div className="relative overflow-hidden aspect-[4/5] rounded-[12px] bg-white flex flex-col items-center justify-center p-8 shadow-sm">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="h-full w-full object-cover absolute inset-0" />
+                  ) : (
+                    <>
+                      <div className="grid h-28 w-28 place-items-center rounded-[10px] bg-ink text-4xl font-display font-extrabold text-plot/70">
+                        {String(i + 1).padStart(2, '0')}
+                      </div>
+                      <h3 className="display mt-6 text-xl font-extrabold text-ink">{member.name}</h3>
+                      <p className="mt-1 text-sm font-display font-semibold text-plot">{member.role}</p>
+                    </>
+                  )}
                 </div>
                 <p className="mt-5 display text-xl font-semibold leading-snug text-ink tracking-[-0.02em]">
                   &ldquo;{member.quote}&rdquo;
@@ -150,13 +195,19 @@ function TeamSection() {
                 key={member.slug}
                 className="team-img-block absolute inset-0 flex items-center justify-center"
               >
-                <div className="w-full max-w-md aspect-[4/5] rounded-[16px] bg-white flex flex-col items-center justify-center p-10 shadow-xl">
-                  <div className="grid h-40 w-40 place-items-center rounded-[14px] bg-ink text-6xl font-display font-extrabold text-plot/70 sm:h-48 sm:w-48 sm:text-7xl">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  <h3 className="display mt-8 text-2xl font-extrabold text-ink text-center sm:text-3xl">{member.name}</h3>
-                  <p className="mt-2 text-sm font-display font-semibold text-plot text-center">{member.role}</p>
-                  <p className="mt-1 text-sm text-map text-center">{member.speciality}</p>
+                <div className="w-full max-w-md aspect-[4/5] rounded-[16px] bg-white flex flex-col items-center justify-center overflow-hidden shadow-xl">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
+                  ) : (
+                    <>
+                      <div className="grid h-40 w-40 place-items-center rounded-[14px] bg-ink text-6xl font-display font-extrabold text-plot/70 sm:h-48 sm:w-48 sm:text-7xl">
+                        {String(i + 1).padStart(2, '0')}
+                      </div>
+                      <h3 className="display mt-8 text-2xl font-extrabold text-ink text-center sm:text-3xl">{member.name}</h3>
+                      <p className="mt-2 text-sm font-display font-semibold text-plot text-center">{member.role}</p>
+                      <p className="mt-1 text-sm text-map text-center">{member.speciality}</p>
+                    </>
+                  )}
                 </div>
               </div>
             ))}
@@ -167,13 +218,19 @@ function TeamSection() {
       <div className="md:hidden pb-16">
         <div className="frame space-y-14">
           {team.map((member, i) => (
-            <div key={member.slug} className="flex flex-col">
-              <div className="aspect-[4/5] max-w-xs rounded-[12px] bg-white flex flex-col items-center justify-center p-8 shadow-sm self-center">
-                <div className="grid h-28 w-28 place-items-center rounded-[10px] bg-ink text-4xl font-display font-extrabold text-plot/70">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 className="display mt-6 text-xl font-extrabold text-ink text-center">{member.name}</h3>
-                <p className="mt-1 text-sm font-display font-semibold text-plot text-center">{member.role}</p>
+            <div key={member.slug} id={`member-${member.slug}`} className="flex flex-col">
+              <div className="relative aspect-[4/5] max-w-xs rounded-[12px] bg-white flex flex-col items-center justify-center p-8 shadow-sm self-center overflow-hidden">
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className="h-full w-full object-cover absolute inset-0" />
+                ) : (
+                  <>
+                    <div className="grid h-28 w-28 place-items-center rounded-[10px] bg-ink text-4xl font-display font-extrabold text-plot/70">
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <h3 className="display mt-6 text-xl font-extrabold text-ink text-center">{member.name}</h3>
+                    <p className="mt-1 text-sm font-display font-semibold text-plot text-center">{member.role}</p>
+                  </>
+                )}
               </div>
               <p className="mt-5 display text-xl font-semibold leading-snug text-ink tracking-[-0.02em]">
                 &ldquo;{member.quote}&rdquo;
@@ -237,6 +294,8 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <TeamSection />
+
       <section ref={storyRef} className="py-20 sm:py-28 bg-white">
         <div className="frame max-w-3xl mx-auto">
           <div className="about-story space-y-8">
@@ -251,7 +310,7 @@ export default function AboutPage() {
               We work differently. Every project begins with the people who will live with the outcome ,  traders, families in informal settlements, fishing communities, county officials. We generate the evidence they need, translate it into actionable frameworks, and stay with the work through implementation.
             </p>
             <p className="text-lg text-map leading-relaxed">
-              Registered as an NGO under the NGO Co-ordination Act of 1990, CSPARK operates across Kenya's counties ,  from Kisumu and Nairobi to Nakuru, Eldoret, Mombasa and the Lake Victoria basin ,  linking grassroots evidence to county and national planning processes.
+              Registered as an NGO under the NGO Co-ordination Act of 1990, CSPARK is based in Kisumu and operates across Kenya's counties — from the Lake Victoria basin to Kisumu's neighbourhoods and surrounding towns — linking grassroots evidence to county and national planning processes.
             </p>
           </div>
         </div>
@@ -347,9 +406,9 @@ export default function AboutPage() {
               <div className="relative h-full p-8 rounded-[16px] bg-white/5 backdrop-blur-sm border border-white/10 hover:border-plot/50 hover:bg-white/10 transition-all duration-500">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-plot/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
-                  <p className="font-display text-sm font-bold uppercase tracking-[0.13em] text-plot mb-3">Founded</p>
-                  <p className="text-2xl font-extrabold mb-2">Nairobi, Kenya</p>
-                  <p className="text-white/60 text-sm">Established to bridge planning and justice</p>
+                  <p className="font-display text-sm font-bold uppercase tracking-[0.13em] text-plot mb-3">Headquarters</p>
+                  <p className="text-2xl font-extrabold mb-2">Kisumu, Kenya</p>
+                  <p className="text-white/60 text-sm">P. O. Box 7444 - 40100 Kisumu</p>
                 </div>
               </div>
             </div>
@@ -358,8 +417,8 @@ export default function AboutPage() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-plot/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
                   <p className="font-display text-sm font-bold uppercase tracking-[0.13em] text-plot mb-3">Geographic Focus</p>
-                  <p className="text-2xl font-extrabold mb-2">6+ Counties</p>
-                  <p className="text-white/60 text-sm">Kisumu, Nairobi, Nakuru, Eldoret, Mombasa, Lake Victoria Basin</p>
+                  <p className="text-2xl font-extrabold mb-2">Kisumu & Lake Victoria Basin</p>
+                  <p className="text-white/60 text-sm">Participatory planning rooted in lake-side communities and surrounding towns</p>
                 </div>
               </div>
             </div>
@@ -376,8 +435,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <TeamSection />
 
       <section className="py-20 bg-ink">
         <div className="frame flex flex-col md:flex-row md:items-center justify-between gap-8">
