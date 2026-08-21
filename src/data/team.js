@@ -1,14 +1,14 @@
 export const team = [
   {
-    slug: 'walter-alando',
-    name: 'Dr. Walter Alando',
+    slug: 'alando-walter',
+    name: 'Dr. Alando Walter',
     role: 'Executive Director',
     speciality: 'Transport & Urban Development Planning',
     image: '/images/alando.jpeg',
     quote: 'Planning that ignores the people it serves will always fail them.',
     bio: 'Urban development planning practitioner and researcher. His professional practice focuses on urban development research, urban governance, urban development planning, climate change resilience planning, and GIS. Has consulted for International Governmental Organisations, the national government of Kenya, municipalities in Kenya and the East African region, various county governments, private-sector organisations, and Non-Governmental Organisations. Corporate member of the Kenya Institute of Planners; lead member of the Environment Institute of Kenya.',
     memberships: 'KIP · EIK',
-    social: { linkedin: 'https://linkedin.com/in/walter-alando', twitter: 'https://twitter.com/walando' },
+    social: { linkedin: 'https://linkedin.com/in/alando-walter', twitter: 'https://twitter.com/alando' },
   },
   {
     slug: 'mildred-ambani',
