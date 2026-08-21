@@ -9,7 +9,7 @@ const records = [
 ];
 
 const people = [
-  { slug: 'walter-alando', name: 'Dr. Walter Alando', specialty: 'Transport and urban development planning', bio: 'Urban development practitioner and researcher working across transport, governance and climate resilience.', memberships: 'KIP · EIK', image: '/images/alando.jpeg', social: { linkedin: 'https://linkedin.com/in/walter-alando', twitter: 'https://twitter.com/walando' } },
+  { slug: 'alando-walter', name: 'Dr. Alando Walter', specialty: 'Transport and urban development planning', bio: 'Urban development practitioner and researcher working across transport, governance and climate resilience.', memberships: 'KIP · EIK', image: '/images/alando.jpeg', social: { linkedin: 'https://linkedin.com/in/alando-walter', twitter: 'https://twitter.com/alando' } },
   { slug: 'mildred-ambani', name: 'Mildred Ambani', specialty: 'GIS and urban management', bio: 'A specialist in geographic information systems who supports data-led planning across Kenyan counties.', memberships: 'GIS · Urban management', social: { linkedin: 'https://linkedin.com/in/mildred-ambani' } },
   { slug: 'nicodemus-mbwika', name: 'Nicodemus Mbwika', specialty: 'Governance and project management', bio: 'A governance and delivery specialist focused on accountable programmes and strong partnerships.', memberships: 'Governance · Delivery', social: { linkedin: 'https://linkedin.com/in/nicodemus-mbwika' } },
   { slug: 'kim-okoth', name: 'Kim Okoth', specialty: 'Management science', bio: 'A management science specialist who keeps CSPARK\'s operations, finance and human resources aligned with the organisation\'s mission.', memberships: 'Management · Operations', social: { linkedin: 'https://linkedin.com/in/kim-okoth' } },
