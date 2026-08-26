@@ -26,7 +26,7 @@ export default function PageHero() {
     <section ref={ref} className="relative min-h-[85svh] flex items-end overflow-hidden bg-ink">
       <div className="absolute inset-0 bg-gradient-to-br from-ink via-ink to-ink/60" />
       <img
-        src="/images/bennett-tobias-zCLPvnopq88-unsplash.jpg"
+        src="/images/mission-planning.jpg"
         alt="Kenyan landscape"
         className="wwd-hero-img absolute inset-0 w-full h-full object-cover will-change-transform"
         loading="eager"

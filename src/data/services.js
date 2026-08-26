@@ -3,7 +3,7 @@ export const services = [
     slug: 'spatial-planning-governance',
     title: 'Spatial Planning & Governance',
     tagline: 'Plans that reach the ground.',
-    heroImage: '/images/ian-macharia-NRv8BsouFBQ-unsplash.jpg',
+    heroImage: '/images/IMG20240306101059.jpg',
     intro: [
       'County governments produce plans, but too often they sit on shelves ,  disconnected from the streets, markets and settlements they are meant to shape. CSPARK works with county teams to produce plans that are built with the people who will use them.',
       'From integrated urban development plans to marine spatial planning on Lake Victoria, our work bridges the gap between good policy and practical implementation.',
