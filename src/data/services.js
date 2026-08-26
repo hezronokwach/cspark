@@ -51,7 +51,7 @@ export const services = [
     slug: 'urban-infrastructure',
     title: 'Urban Infrastructure',
     tagline: 'Services that serve everyone.',
-    heroImage: '/images/bennett-tobias-zCLPvnopq88-unsplash.jpg',
+    heroImage: '/images/mission-planning.jpg',
     intro: [
       'From solid waste to green energy, urban infrastructure is the skeleton that holds a city together. Yet too often, the systems that communities rely on ,  especially in informal settings ,  are invisible to policy makers.',
       'CSPARK researches how people actually access, build and co-produce urban services, and turns that knowledge into actionable frameworks.',
