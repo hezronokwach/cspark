@@ -44,8 +44,8 @@ export const projects = [
     outcome: 'Detailed household maps and Relocation Action Plans that put affected families at the centre of upgrading decisions. The plans have been adopted as reference documents by county planning teams working on settlement formalisation.',
     gallery: [
       { type: 'image', src: '/images/project-settlement-mapping.jpg', alt: 'Settlement mapping in progress', caption: 'Community members conducting household-level mapping in their settlement.' },
-      { type: 'image', src: '/images/ian-macharia-NRv8BsouFBQ-unsplash.jpg', alt: 'Relocation action plan workshop', caption: 'Workshop to develop Relocation Action Plans with affected families and county teams.' },
-      { type: 'image', src: '/images/bennett-tobias-zCLPvnopq88-unsplash.jpg', alt: 'Infrastructure assessment in informal settlement', caption: 'Assessing existing infrastructure and service access during the enumeration process.' },
+      { type: 'image', src: '/images/project-settlement-mapping.jpg', alt: 'Relocation action plan workshop', caption: 'Workshop to develop Relocation Action Plans with affected families and county teams.' },
+      { type: 'image', src: '/images/mission-planning.jpg', alt: 'Infrastructure assessment in informal settlement', caption: 'Assessing existing infrastructure and service access during the enumeration process.' },
       { type: 'video', src: '/videos/settlement-mapping.mp4', poster: '/images/project-settlement-mapping.jpg', caption: 'Overview of the participatory settlement mapping and relocation planning process.' },
     ],
     relatedServiceSlugs: ['urban-housing', 'urban-security', 'gender-mainstreaming'],

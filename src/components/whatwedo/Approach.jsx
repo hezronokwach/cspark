@@ -76,7 +76,7 @@ export default function Approach() {
         <div ref={imgRef} className="relative rounded-[12px] overflow-hidden shadow-lg opacity-0 lg:sticky lg:top-32">
           <div className="absolute inset-0 bg-gradient-to-br from-ink to-map" />
           <img
-            src="/images/ian-macharia-NRv8BsouFBQ-unsplash.jpg"
+            src="/images/IMG20240306101059.jpg"
             alt="Team working together"
             className="relative w-full h-[500px] object-cover will-change-transform scale-110"
             loading="lazy"
