@@ -38,7 +38,7 @@ export const team = [
     speciality: 'Management Science',
     image: '/images/kim.jpg',
     quote: 'Strong systems behind the scenes make strong impact on the ground.',
-    bio: 'A management science specialist who keeps CSPARK\'s operations, finance and human resources aligned with the organisation\'s mission. Her work ensures that every programme is backed by sound administration and institutional resilience.',
+    bio: 'A management science specialist who keeps CSPARK\'s operations, finance and human resources aligned with the organisation\'s mission. His work ensures that every programme is backed by sound administration and institutional resilience.',
     memberships: 'Management · Operations',
     social: { linkedin: 'https://linkedin.com/in/kim-okoth' },
   },
