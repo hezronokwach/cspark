@@ -63,6 +63,17 @@ export const team = [
     memberships: 'Planning · Community',
     social: { linkedin: 'https://linkedin.com/in/amos-kasimu' },
   },
+  {
+    slug: 'jane-wairutu',
+    name: 'Jane Wairutu',
+    role: 'Lead MEL & Research Specialist',
+    speciality: 'Monitoring, Evaluation & Learning (MEL) · Urban Development',
+    image: '/images/jane.png',
+    quote: 'Rigorous evidence and community ownership turn data into lasting urban transformation.',
+    bio: 'A senior development and research consultant with over 15 years of experience leading participatory MEL systems, community-driven research and urban resilience initiatives across Kenya. She has supported UN agencies, international NGOs and donor-funded programmes across urban development, climate adaptation, housing and social inclusion, ensuring community-generated evidence directly informs policy and practice.',
+    memberships: 'MEL · Research · Safeguarding',
+    social: { linkedin: 'https://www.linkedin.com/in/janekirumu/' },
+  },
 ];
 
 export function getTeamMember(slug) {
