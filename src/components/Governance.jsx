@@ -1,21 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import { team } from '../data/team';
 
 const records = [
   ['Participatory research', 'We work with communities and county teams who will use the results.'],
   ['Safeguarding', 'Safeguarding guides every programme, study and field activity.'],
   ['Data protection', 'We handle personal information with care and follow Kenya\'s law.']
-];
-
-const people = [
-  { slug: 'alando-walter', name: 'Dr. Alando Walter', specialty: 'Transport and urban development planning', bio: 'Urban development planning practitioner and researcher with experience across urban governance, climate resilience and GIS. Has consulted for international organisations, national and county governments, and non-governmental organisations in Kenya and the East African region.', memberships: 'KIP · EIK', image: '/images/alando.jpeg', social: { linkedin: 'https://linkedin.com/in/alando-walter', twitter: 'https://twitter.com/alando' } },
-  { slug: 'mildred-ambani', name: 'Mildred Ambani', specialty: 'GIS and urban management', bio: 'A specialist in geographic information systems who supports data-led planning across Kenyan counties.', memberships: 'GIS · Urban management', image: '/images/ambani.JPG', social: { linkedin: 'https://linkedin.com/in/mildred-ambani' } },
-  { slug: 'nicodemus-mbwika', name: 'Nicodemus Mbwika', specialty: 'Governance and project management', bio: 'A governance and delivery specialist focused on accountable programmes and strong partnerships.', memberships: 'Governance · Delivery', social: { linkedin: 'https://linkedin.com/in/nicodemus-mbwika' } },
-  { slug: 'kim-okoth', name: 'Kim Okoth', specialty: 'Management science', bio: 'A management science specialist who keeps CSPARK\'s operations, finance and human resources aligned with the organisation\'s mission. His work ensures that every programme is backed by sound administration and institutional resilience.', memberships: 'Management · Operations', image: '/images/kim.jpg', social: { linkedin: 'https://linkedin.com/in/kim-okoth' } },
-  { slug: 'emmanuel-midheme', name: 'Dr. Emmanuel Midheme', specialty: 'Spatial planning and urban development', bio: 'A spatial planning and urban development specialist who teaches at Maseno University and brings over 15 years of practice and research across public service, academia and consultancy. His research on sustainable urbanism and informal settlements feeds advocacy that translates community evidence into policy frameworks.', memberships: 'PPRB · EIA', image: '/images/Midheme_passport (2).jpg', social: { linkedin: 'https://linkedin.com/in/emmanuel-midheme', twitter: 'https://twitter.com/emidheme' } },
-  { slug: 'amos-kasimu', name: 'Amos Kasimu', specialty: 'Urban planning', bio: 'An urban planner with deep experience in participatory settlement mapping, relocation action plans and county-level spatial frameworks.', memberships: 'Planning · Community', social: { linkedin: 'https://linkedin.com/in/amos-kasimu' } },
-  { slug: 'jane-wairutu', name: 'Jane Wairutu', specialty: 'Monitoring, evaluation and learning (MEL)', bio: 'A senior development and research consultant with over 15 years of experience leading participatory MEL systems, community-driven research and urban resilience programmes across Kenya.', memberships: 'MEL · Research · Safeguarding', image: '/images/jane.png', social: { linkedin: 'https://www.linkedin.com/in/janekirumu/' } }
 ];
 
 function SocialLinks({ social }) {
@@ -44,16 +35,16 @@ function TeamCard({ person, index }) {
   return (
     <article className="rounded-[12px] bg-[#ece7dc] p-7 flex flex-col">
       {person.image ? (
-        <div className="media-frame h-64 rounded-[10px] overflow-hidden">
-          <img src={person.image} alt={person.name} className="h-full w-full object-cover" />
+        <div className="media-frame aspect-[4/5] w-full rounded-[10px] overflow-hidden bg-white">
+          <img src={person.image} alt={person.name} className="h-full w-full object-cover object-top" />
         </div>
       ) : (
-        <div className="grid h-64 place-items-center rounded-[10px] bg-ink text-6xl font-display font-extrabold text-plot/70">
+        <div className="grid aspect-[4/5] w-full place-items-center rounded-[10px] bg-ink text-6xl font-display font-extrabold text-plot/70">
           {String(index + 1).padStart(2, '0')}
         </div>
       )}
       <h3 className="display mt-6 text-2xl font-extrabold">{person.name}</h3>
-      <p className="mt-2 text-map">{person.specialty}</p>
+      <p className="mt-2 text-map">{person.speciality || person.specialty}</p>
       <p className="mt-3 text-sm text-map/80 line-clamp-3">{person.bio}</p>
       <div className="mt-auto pt-6 flex items-center justify-between">
         <Link to={`/about#team-${person.slug}`} className="action-link">
@@ -109,7 +100,7 @@ export default function Governance() {
           </div>
         </div>
         <div className="grid gap-6 pt-5 md:grid-cols-2 lg:grid-cols-3">
-          {people.map((person, i) => (
+          {team.map((person, i) => (
             <TeamCard key={person.slug} person={person} index={i} />
           ))}
         </div>

@@ -143,7 +143,7 @@ function TeamSection() {
               <div key={member.slug} id={`member-${member.slug}`} className="flex flex-col">
                 <div className="relative overflow-hidden aspect-[4/5] rounded-[12px] bg-white flex flex-col items-center justify-center p-8 shadow-sm">
                   {member.image ? (
-                    <img src={member.image} alt={member.name} className="h-full w-full object-cover absolute inset-0" />
+                    <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top absolute inset-0" />
                   ) : (
                     <>
                       <div className="grid h-28 w-28 place-items-center rounded-[10px] bg-ink text-4xl font-display font-extrabold text-plot/70">
@@ -205,7 +205,7 @@ function TeamSection() {
               >
                 <div className="w-full max-w-md aspect-[4/5] rounded-[16px] bg-white flex flex-col items-center justify-center overflow-hidden shadow-xl">
                   {member.image ? (
-                    <img src={member.image} alt={member.name} className="h-full w-full object-cover" />
+                    <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top" />
                   ) : (
                     <>
                       <div className="grid h-40 w-40 place-items-center rounded-[14px] bg-ink text-6xl font-display font-extrabold text-plot/70 sm:h-48 sm:w-48 sm:text-7xl">
@@ -229,7 +229,7 @@ function TeamSection() {
             <div key={member.slug} id={`member-${member.slug}`} className="flex flex-col">
               <div className="relative aspect-[4/5] max-w-xs rounded-[12px] bg-white flex flex-col items-center justify-center p-8 shadow-sm self-center overflow-hidden">
                 {member.image ? (
-                  <img src={member.image} alt={member.name} className="h-full w-full object-cover absolute inset-0" />
+                  <img src={member.image} alt={member.name} className="h-full w-full object-cover object-top absolute inset-0" />
                 ) : (
                   <>
                     <div className="grid h-28 w-28 place-items-center rounded-[10px] bg-ink text-4xl font-display font-extrabold text-plot/70">
