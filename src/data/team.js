@@ -74,6 +74,17 @@ export const team = [
     memberships: 'MEL · Research · Safeguarding',
     social: { linkedin: 'https://www.linkedin.com/in/janekirumu/' },
   },
+  {
+    slug: 'valentine-opanga',
+    name: 'Dr. Valentine Opanga',
+    role: 'Senior Environmental Governance & Diplomacy Specialist',
+    speciality: 'Environmental Governance · Diplomacy & Regional Dialogue',
+    image: '/images/valentine.jpeg',
+    quote: 'Lasting cooperation is built where environmental evidence meets multi-stakeholder trust.',
+    bio: 'An environmental governance researcher and diplomacy practitioner with over a decade of experience across East Africa and the Horn of Africa. Holding a PhD in Geography from the University of Bonn, she specialises in transboundary natural-resource politics, regional land governance, and translating complex environmental evidence into actionable policy.',
+    memberships: 'Environmental Governance · Diplomacy · IGAD',
+    social: { linkedin: 'https://linkedin.com/in/valentine-opanga' },
+  },
 ];
 
 export function getTeamMember(slug) {
