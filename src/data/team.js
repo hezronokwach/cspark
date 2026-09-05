@@ -12,7 +12,7 @@ export const team = [
   },
   {
     slug: 'mildred-ambani',
-    name: 'Mildred Ambani',
+    name: 'Dr. Mildred Ambani',
     role: 'Director of Research',
     speciality: 'GIS & Urban Management',
     image: '/images/ambani.JPG',
@@ -54,16 +54,6 @@ export const team = [
     social: { linkedin: 'https://linkedin.com/in/emmanuel-midheme', twitter: 'https://twitter.com/emidheme' },
   },
   {
-    slug: 'amos-kasimu',
-    name: 'Amos Kasimu',
-    role: 'Senior Urban Planner',
-    speciality: 'Urban Planning',
-    quote: 'Every plan should start with the street, not the office.',
-    bio: 'An urban planner with deep experience in participatory settlement mapping, relocation action plans and county-level spatial frameworks. He works directly with communities to co-produce plans that reflect their priorities and protect their rights.',
-    memberships: 'Planning · Community',
-    social: { linkedin: 'https://linkedin.com/in/amos-kasimu' },
-  },
-  {
     slug: 'jane-wairutu',
     name: 'Jane Wairutu',
     role: 'Lead MEL & Research Specialist',
@@ -77,12 +67,12 @@ export const team = [
   {
     slug: 'valentine-opanga',
     name: 'Dr. Valentine Opanga',
-    role: 'Senior Environmental Governance & Diplomacy Specialist',
-    speciality: 'Environmental Governance · Diplomacy & Regional Dialogue',
+    role: 'Senior Environmental & Land Governance Specialist',
+    speciality: 'Environmental & Land Governance · Political Ecology',
     image: '/images/valentine.jpeg',
-    quote: 'Lasting cooperation is built where environmental evidence meets multi-stakeholder trust.',
-    bio: 'An environmental governance researcher and diplomacy practitioner with over a decade of experience across East Africa and the Horn of Africa. Holding a PhD in Geography from the University of Bonn, she specialises in transboundary natural-resource politics, regional land governance, and translating complex environmental evidence into actionable policy.',
-    memberships: 'Environmental Governance · Diplomacy · IGAD',
+    quote: 'Lasting cooperation is built where environmental evidence meets competing interests, lived realities, and trust.',
+    bio: 'An environmental governance researcher and practitioner with over a decade of experience across East Africa and the Horn of Africa. Holding a PhD in Geography from the University of Bonn, she specialises in environmental and land governance, political ecology, and translating complex evidence into actionable policy. Her work explores how power, policy, and local realities shape environmental decisions—and how more equitable, resilient approaches to shared environmental challenges can be built.',
+    memberships: 'Environmental Governance · Land Policy · Political Ecology',
     social: { linkedin: 'https://linkedin.com/in/valentine-opanga' },
   },
 ];

@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const themes = [
   {
     title: 'Spatial Planning & Governance',
-    description: 'Integrated urban development plans, local economic plans, land reorganisation and marine spatial planning around Lake Victoria.',
+    description: 'Integrated urban and rural development plans, local economic plans, land reorganisation and marine spatial planning across Lake Victoria and the Indian Ocean.',
     slug: 'spatial-planning-governance',
     mark: (
       <g>
