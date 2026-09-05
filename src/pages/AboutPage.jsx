@@ -318,7 +318,7 @@ export default function AboutPage() {
               We work differently. Every project begins with the people who will live with the outcome ,  traders, families in informal settlements, fishing communities, county officials. We generate the evidence they need, translate it into actionable frameworks, and stay with the work through implementation.
             </p>
             <p className="text-lg text-map leading-relaxed">
-              Registered as an NGO under the NGO Co-ordination Act of 1990, CSPARK is based in Kisumu and operates across Kenya's counties — from the Lake Victoria basin to Kisumu's neighbourhoods and surrounding towns — linking grassroots evidence to county and national planning processes.
+              Registered as an NGO under the NGO Co-ordination Act of 1990, CSPARK is headquartered in Kisumu and operates across Kenya's counties — from the Lake Victoria basin and Rift Valley to Nairobi, Eastern, and Coastal regions — linking grassroots community evidence to county, national, and regional planning processes.
             </p>
           </div>
         </div>
@@ -425,8 +425,8 @@ export default function AboutPage() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-plot/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
                   <p className="font-display text-sm font-bold uppercase tracking-[0.13em] text-plot mb-3">Geographic Focus</p>
-                  <p className="text-2xl font-extrabold mb-2">Kisumu & Lake Victoria Basin</p>
-                  <p className="text-white/60 text-sm">Participatory planning rooted in lake-side communities and surrounding towns</p>
+                  <p className="text-2xl font-extrabold mb-2">National & Regional (Kenya & East Africa)</p>
+                  <p className="text-white/60 text-sm">Operations across Kenyan counties with strategic research and policy partnerships across the East African and Horn of Africa region</p>
                 </div>
               </div>
             </div>
